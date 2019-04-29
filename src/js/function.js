@@ -25,9 +25,10 @@ export default class Team {
   [Symbol.iterator]() {
     const { hero } = this;
     let current = 0;
+    let last = hero.length;
     return {
       next() {
-        if (current < hero.length) {
+        if (current < last) {
           const val = hero[current];
           current += 1;
           return {
